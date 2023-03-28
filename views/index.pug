@@ -1,0 +1,11 @@
+extends layout
+
+block main-content
+  h1 Libraries 
+
+  ul
+    each library in libraries
+      - let branchId = library.getAttribute('id');
+      - let branchName = library.querySelector("name").textContent; 
+      li 
+        a(href=`/library/${branchId}`) #{branchName}
